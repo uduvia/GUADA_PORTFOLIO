@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portafolio — Tu Nombre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ── HEADER ─────────────────────────────── -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <span class="logo-name">Tu Nombre</span>
+        <span class="logo-sub">Fotografía &amp; Cine</span>
+      </a>
+      <nav class="site-nav">
+        <a href="#gallery" class="nav-link active" data-section="gallery">Galería</a>
+        <a href="#about"   class="nav-link"         data-section="about">Sobre mí</a>
+        <a href="#contact" class="nav-link"         data-section="contact">Contacto</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Abrir menú">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ── MOBILE NAV ──────────────────────────── -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#gallery" class="mobile-nav-link">Galería</a>
+    <a href="#about"   class="mobile-nav-link">Sobre mí</a>
+    <a href="#contact" class="mobile-nav-link">Contacto</a>
+  </div>
+
+  <!-- ── HERO / GALERÍA PRINCIPAL ───────────── -->
+  <main>
+    <section id="gallery" class="gallery-section">
+
+      <!-- Marca de agua lateral (firma editorial) -->
+      <div class="watermark" aria-hidden="true">Tu&nbsp;Nombre</div>
+
+      <!-- Visor de imagen -->
+      <div class="viewer-wrap">
+
+        <div class="viewer" id="viewer">
+          <!-- Las imágenes se generan con JS desde el array de script.js -->
+          <div class="slide active" id="slide-0">
+            <img src="fotos/foto-01.jpg" alt="Fotografía 1" />
+          </div>
+          <div class="slide" id="slide-1">
+            <img src="fotos/foto-02.jpg" alt="Fotografía 2" />
+          </div>
+          <div class="slide" id="slide-2">
+            <img src="fotos/foto-03.jpg" alt="Fotografía 3" />
+          </div>
+          <div class="slide" id="slide-3">
+            <img src="fotos/foto-04.jpg" alt="Fotografía 4" />
+          </div>
+          <div class="slide" id="slide-4">
+            <img src="fotos/foto-05.jpg" alt="Fotografía 5" />
+          </div>
+          <!-- Agrega más bloques <div class="slide"> aquí si tienes más fotos -->
+        </div>
+
+        <!-- Overlay oscuro durante transición -->
+        <div class="transition-overlay" id="overlay"></div>
+
+        <!-- Controles de navegación -->
+        <button class="nav-btn prev" id="prevBtn" aria-label="Foto anterior">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="nav-btn next" id="nextBtn" aria-label="Siguiente foto">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <!-- Botón pantalla completa -->
+        <button class="fullscreen-btn" id="fullscreenBtn" aria-label="Pantalla completa">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+      </div><!-- /viewer-wrap -->
+
+      <!-- Metadatos de la foto actual -->
+      <div class="photo-meta">
+        <div class="meta-left">
+          <span class="photo-title" id="photoTitle">Sin título</span>
+          <span class="photo-desc" id="photoDesc"></span>
+        </div>
+        <div class="meta-right">
+          <span class="counter" id="counter">01 / 05</span>
+        </div>
+      </div>
+
+      <!-- Barra de progreso -->
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+
+      <!-- Miniaturas -->
+      <div class="thumbnails" id="thumbnails"></div>
+
+    </section>
+
+    <!-- ── SOBRE MÍ ─────────────────────────── -->
+    <section id="about" class="about-section">
+      <div class="about-inner">
+        <div class="about-text">
+          <p class="section-eyebrow">Sobre mí</p>
+          <h2 class="about-heading">La luz que<br /><em>lo cambia todo.</em></h2>
+          <p class="about-body">
+            Soy fotógrafo y cineasta con sede en [tu ciudad]. Mi trabajo explora
+            la intersección entre la luz natural y la emoción humana, buscando
+            ese instante exacto donde la realidad se convierte en imagen.
+          </p>
+          <p class="about-body">
+            Con más de [X] años de experiencia en fotografía documental, retrato
+            y producción audiovisual, he colaborado con marcas, revistas y
+            realizadores de todo el mundo.
+          </p>
+          <a href="#contact" class="cta-link">Trabajemos juntos →</a>
+        </div>
+        <div class="about-image">
+          <!-- Reemplaza por tu foto de perfil -->
+          <div class="profile-placeholder">
+            <img src="fotos/perfil.jpg" alt="Retrato del fotógrafo" onerror="this.parentElement.classList.add('no-img')" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTACTO ────────────────────────── -->
+    <section id="contact" class="contact-section">
+      <div class="contact-inner">
+        <p class="section-eyebrow">Contacto</p>
+        <h2 class="contact-heading">Hablemos de<br /><em>tu proyecto.</em></h2>
+        <div class="contact-links">
+          <a href="mailto:tucorreo@ejemplo.com" class="contact-item">
+            <span class="contact-label">Email</span>
+            <span class="contact-value">tucorreo@ejemplo.com</span>
+          </a>
+          <a href="https://instagram.com/tu_usuario" target="_blank" rel="noopener" class="contact-item">
+            <span class="contact-label">Instagram</span>
+            <span class="contact-value">@tu_usuario</span>
+          </a>
+          <a href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener" class="contact-item">
+            <span class="contact-label">WhatsApp</span>
+            <span class="contact-value">+54 9 XX XXXX-XXXX</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ── FOOTER ─────────────────────────────── -->
+  <footer class="site-footer">
+    <span>© <span id="year"></span> Tu Nombre — Todos los derechos reservados.</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
