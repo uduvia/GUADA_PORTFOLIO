@@ -11,7 +11,7 @@
 // ──────────────────────────────────────────────────────
 const photos = [
   {
-    src:   "fotos/foto-01.jpg",
+    src:   "fotos/img_1.jpg",
     title: "Luz de la tarde",
     desc:  "Buenos Aires, 2024"
   },
